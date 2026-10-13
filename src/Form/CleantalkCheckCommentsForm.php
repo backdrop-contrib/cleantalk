@@ -118,7 +118,7 @@ function cleantalk_check_comments_form_submit($form, &$form_state) {
   $values = array();
   foreach ($form_state['values']['cleantalk_spam_comments_wrapper']['cleantalk_spam_comments_table'] as $key => $value) {
     if (is_string($value)) {
-      $values[] = $form_state['complete form']['cleantalk_spam_comments']['cleantalk_spam_comments_wrapper']['cleantalk_spam_comments_table']['#options'][$value];
+      $values[] = $form_state['complete_form']['cleantalk_spam_comments']['cleantalk_spam_comments_wrapper']['cleantalk_spam_comments_table']['#options'][$value];
     }
   }
   //Delete comment
