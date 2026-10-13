@@ -120,7 +120,7 @@ function cleantalk_check_users_form_submit($form, &$form_state) {
   $values = array();
   foreach ($form_state['values']['cleantalk_spam_users_wrapper']['cleantalk_spam_users_table'] as $key => $value) {
     if (is_string($value)) {
-      $values[] = $form_state['complete form']['cleantalk_spam_users']['cleantalk_spam_users_wrapper']['cleantalk_spam_users_table']['#options'][$value];
+      $values[] = $form_state['complete_form']['cleantalk_spam_users']['cleantalk_spam_users_wrapper']['cleantalk_spam_users_table']['#options'][$value];
     }
   }
   //Delete user
