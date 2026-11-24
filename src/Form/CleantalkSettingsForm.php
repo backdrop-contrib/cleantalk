@@ -265,8 +265,9 @@ function cleantalk_settings_form_validate($form, &$form_state) {
   $config = config('cleantalk.settings');
   if ($form_state['values']['cleantalk_authkey']) {
     $cleantalk_auth_key = trim($form_state['values']['cleantalk_authkey']);
-    $is_valid = CleantalkHelper::api_method__notice_validate_key($cleantalk_auth_key);
-
+    // $is_valid = CleantalkHelper::api_method__notice_validate_key($cleantalk_auth_key); // This API method is no longer supported as of October 16, 2026
+    $is_valid = CleantalkHelper::api_method__notice_paid_till($cleantalk_auth_key, '');
+      
     if (isset($is_valid['valid']) && intval($is_valid['valid']) == 1) {
       CleantalkHelper::api_method_send_empty_feedback($cleantalk_auth_key, CLEANTALK_USER_AGENT);
       $path_to_cms = preg_replace('/http[s]?:\/\//', '', $GLOBALS['base_url'], 1);
